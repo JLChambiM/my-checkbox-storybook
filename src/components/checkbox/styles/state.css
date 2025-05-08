@@ -1,0 +1,41 @@
+/* 
+ * State.css - Estilos para los diferentes estados del checkbox
+ * Enabled, disabled, hover, focus, etc.
+ */
+
+/* Estado: Focus */
+.input:focus-visible {
+    outline: none;
+  }
+  
+  .input:focus-visible + .container::before {
+    background-color: var(--m3-primary-pressed);
+  }
+  
+  .theme-secondary .input:focus-visible + .container::before {
+    background-color: var(--m3-secondary-pressed);
+  }
+  
+  .theme-error .input:focus-visible + .container::before {
+    background-color: var(--m3-error-pressed);
+  }
+  
+  /* Estado: Disabled */
+  .disabled .input {
+    border-color: var(--m3-outline-disabled);
+    cursor: not-allowed;
+  }
+  
+  .disabled .input:checked {
+    background-color: var(--m3-on-surface-disabled);
+    border-color: transparent;
+  }
+  
+  .disabled .container:hover::before {
+    background-color: transparent;
+  }
+  
+  .label-disabled {
+    color: var(--m3-on-surface-disabled);
+    cursor: not-allowed;
+  }
