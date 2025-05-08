@@ -1,0 +1,4 @@
+*.tsx !text !filter !merge !diff
+*.ts !text !filter !merge !diff
+*.js !text !filter !merge !diff
+*.jsx !text !filter !merge !diff

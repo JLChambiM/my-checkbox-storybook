@@ -1,0 +1,58 @@
+/* 
+ * Theme.css - Temas de color para el checkbox
+ * Variantes de aspecto visual basadas en temas
+ */
+
+/* Tema: Primary (morado M3) */
+.theme-primary .input:checked {
+    background-color: var(--m3-primary);
+    border-color: var(--m3-primary);
+  }
+  
+  .theme-primary .container:hover::before {
+    background-color: var(--m3-primary-hover);
+  }
+  
+  .theme-primary .container:active::before {
+    background-color: var(--m3-primary-pressed);
+  }
+  
+  .theme-primary .input:hover:not(:disabled):not(:checked) {
+    border-color: var(--m3-primary);
+  }
+  
+  /* Tema: Secondary (negro azulado M3) */
+  .theme-secondary .input:checked {
+    background-color: var(--m3-secondary);
+    border-color: var(--m3-secondary);
+  }
+  
+  .theme-secondary .container:hover::before {
+    background-color: var(--m3-secondary-hover);
+  }
+  
+  .theme-secondary .container:active::before {
+    background-color: var(--m3-secondary-pressed);
+  }
+  
+  .theme-secondary .input:hover:not(:disabled):not(:checked) {
+    border-color: var(--m3-secondary);
+  }
+  
+  /* Tema: Error (rojo M3) */
+  .theme-error .input:checked {
+    background-color: var(--m3-error);
+    border-color: var(--m3-error);
+  }
+  
+  .theme-error .container:hover::before {
+    background-color: var(--m3-error-hover);
+  }
+  
+  .theme-error .container:active::before {
+    background-color: var(--m3-error-pressed);
+  }
+  
+  .theme-error .input:hover:not(:disabled):not(:checked) {
+    border-color: var(--m3-error);
+  }

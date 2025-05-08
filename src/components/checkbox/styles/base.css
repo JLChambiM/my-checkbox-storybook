@@ -1,0 +1,31 @@
+/* 
+ * Base.css - Estilos base para el checkbox
+ * Reseteo de estilos y definiciones fundamentales
+ */
+
+ .input {
+    /* Reset del input */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    
+    /* Estilos base */
+    border: 2px solid var(--m3-outline);
+    border-radius: var(--corner-radius);
+    transition: all var(--transition-duration) ease;
+  }
+  
+  .label {
+    /* Tipografía base para etiquetas */
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    cursor: pointer;
+    user-select: none;
+  }

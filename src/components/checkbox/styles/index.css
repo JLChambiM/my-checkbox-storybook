@@ -1,0 +1,12 @@
+/*
+ * Checkbox Component CSS
+ * Arquitectura SMACSS (Scalable and Modular Architecture for CSS)
+ */
+
+/* Importar los módulos CSS en el orden correcto */
+@import './variables.css';
+@import './base.css';
+@import './layout.css';
+@import './module.css';
+@import './theme.css';
+@import './state.css';

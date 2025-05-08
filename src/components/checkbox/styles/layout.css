@@ -1,0 +1,61 @@
+/* 
+ * Layout.css - Estilos de layout para el checkbox
+ * Posicionamiento, dimensiones y estructura
+ */
+
+ .wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--container-size);
+    height: var(--container-size);
+  }
+  
+  /* Posicionamiento del input */
+  .input {
+    position: absolute;
+    width: var(--input-size);
+    height: var(--input-size);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Capa de estado (efecto circular) */
+  .container::before {
+    content: '';
+    position: absolute;
+    width: var(--state-layer-size);
+    height: var(--state-layer-size);
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color var(--transition-duration) ease;
+  }
+  
+  /* Icono de check */
+  .input::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 5px;
+    height: 9px;
+    border: solid transparent;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: border-color var(--transition-duration) ease;
+  }
+  
+  /* Espacio entre el checkbox y la etiqueta */
+  .label {
+    margin-left: 8px;
+  }
