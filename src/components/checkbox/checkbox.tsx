@@ -1,67 +1,63 @@
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { Properties } from './types';
 import './styles/index.css';
-import { toDefaults } from './helpers';
+import { toDefaults, getContainerClass, getLabelClass } from './helpers';
 
 /**
- * Componente Checkbox que sigue las especificaciones Material Design M3
  * 
- * @param properties - Propiedades del checkbox
- * @returns Componente Checkbox
+ * @param properties 
+ * @returns
  */
-
 export default function Checkbox(properties?: Properties) {
-    const { id, label, checked, disabled, theme, onChange } = toDefaults(properties);
+	const defaults = toDefaults(properties);
 
-    const inputReference = useRef<HTMLInputElement>(null);
+	const inputReference = useRef<HTMLInputElement>(null);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      if (!disabled) {
-        onChange(event.target.checked);
-      }
-    };
+	const onChangeHandler = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+		if (!defaults.disabled) {
+			defaults.onChange(event.target.checked);
+		}
+	}, [defaults]);
 
-    // Manejar el clic en el contenedor (aumenta el área de toque)
-    const handleContainerClick = () => {
-      if (inputReference.current && !disabled) {
-        inputReference.current.click();
-      }
-    };
+	const onContainerClickHandler = useCallback(() => {
+		if (inputReference.current && !defaults.disabled) {
+			inputReference.current.click();
+		}
+	}, [defaults.disabled]);
 
-    // Clases CSS basadas en el estado y tema
-    const containerClass = `wrapper theme-${theme} ${disabled ? 'disabled' : ''}`;
+	const onLabelClickHandler = useCallback((event: React.MouseEvent) => {
+		if (defaults.disabled) {
+			event.preventDefault();
+		}
+	}, [defaults.disabled]);
 
-    return (
-        <div className={containerClass}>
-            <div 
-                className="container"
-                onClick={handleContainerClick}
-                role="presentation"
-            >
-                <input
-                    ref={inputReference}
-                    type="checkbox"
-                    className="input"
-                    checked={checked}
-                    onChange={handleChange}
-                    id={id}
-                    disabled={disabled}
-                    aria-checked={checked}
-                />
-            </div>
-            {label && (
-                <label 
-                    className={`label ${disabled ? 'label-disabled' : ''}`}
-                    htmlFor={id}
-                    onClick={(event: React.MouseEvent) => {
-                        if (disabled) {
-                            event.preventDefault();
-                        }
-                    }}
-                >
-                    {label}
-                </label>
-            )}
-        </div>
-    );
+	return (
+		<div className={getContainerClass(defaults.theme, defaults.disabled)}>
+			<div 
+				className="container"
+				onClick={onContainerClickHandler}
+				role="presentation"
+			>
+				<input
+					ref={inputReference}
+					type="checkbox"
+					className="input"
+					checked={defaults.checked}
+					onChange={onChangeHandler}
+					id={defaults.id}
+					disabled={defaults.disabled}
+					aria-checked={defaults.checked}
+				/>
+			</div>
+			{defaults.label && (
+				<label 
+					className={getLabelClass(defaults.disabled)}
+					htmlFor={defaults.id}
+					onClick={onLabelClickHandler}
+				>
+					{defaults.label}
+				</label>
+			)}
+		</div>
+	);
 }

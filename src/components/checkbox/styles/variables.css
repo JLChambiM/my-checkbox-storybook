@@ -1,42 +1,36 @@
-/* 
- * Variables.css - Define todas las variables CSS para el componente
- * Siguiendo Material Design M3
- */
-
- :root {
-    /* Colores M3 */
-    --m3-primary: rgb(103, 80, 164);
-    --m3-primary-container: rgb(234, 221, 255);
-    --m3-primary-hover: rgba(103, 80, 164, 0.08);
-    --m3-primary-pressed: rgba(103, 80, 164, 0.12);
-    
-    --m3-secondary: rgb(26, 115, 232);
-    --m3-secondary-container: rgb(232, 222, 248);
-    --m3-secondary-hover: rgba(29, 25, 43, 0.08);
-    --m3-secondary-pressed: rgba(29, 25, 43, 0.12);
-    
-    --m3-error: rgb(179, 38, 30);
-    --m3-error-container: rgb(249, 222, 220);
-    --m3-error-hover: rgba(179, 38, 30, 0.08);
-    --m3-error-pressed: rgba(179, 38, 30, 0.12);
-    
-    --m3-on-surface: rgb(29, 27, 32);
-    --m3-on-surface-disabled: rgba(29, 27, 32, 0.38);
-    --m3-outline: rgb(73, 69, 79);
-    --m3-outline-disabled: rgba(29, 27, 32, 0.12);
-    
-    /* Tamaños */
-    --container-size: 48px;
-    --input-size: 18px;
-    --corner-radius: 2px;
-    --state-layer-size: 40px;
-    
-    /* Tipografía */
-    --font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    --font-size: 14px;
-    --line-height: 1.5;
-    --letter-spacing: 0.00938em;
-    
-    /* Tiempos de transición */
-    --transition-duration: 0.2s;
-  }
+:root {
+  --color-primary: rgb(103, 80, 164);
+  --color-primary-container: rgb(234, 221, 255);
+  --color-primary-hover: rgba(103, 80, 164, 0.08);
+  --color-primary-pressed: rgba(103, 80, 164, 0.12);
+  
+  --color-secondary: rgb(26, 115, 232);
+  --color-secondary-container: rgb(232, 222, 248);
+  --color-secondary-hover: rgba(29, 25, 43, 0.08);
+  --color-secondary-pressed: rgba(29, 25, 43, 0.12);
+  
+  --color-error: rgb(179, 38, 30);
+  --color-error-container: rgb(249, 222, 220);
+  --color-error-hover: rgba(179, 38, 30, 0.08);
+  --color-error-pressed: rgba(179, 38, 30, 0.12);
+  
+  --color-surface-text: rgb(29, 27, 32);
+  --color-surface-text-disabled: rgba(29, 27, 32, 0.38);
+  --color-outline: rgb(73, 69, 79);
+  --color-outline-disabled: rgba(29, 27, 32, 0.12);
+  
+  /* sizes */
+  --size-checkbox-container: 48px;
+  --size-checkbox-input: 18px;
+  --size-border-radius: 2px;
+  --size-state-layer: 40px;
+  
+  /* font */
+  --typography-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  --typography-font-size: 14px;
+  --typography-line-height: 1.5;
+  --typography-letter-spacing: 0.00938em;
+  
+  /* animations */
+  --animation-duration-standard: 0.2s;
+}
