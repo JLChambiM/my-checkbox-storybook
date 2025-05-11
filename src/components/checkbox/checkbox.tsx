@@ -1,17 +1,23 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useEffect } from 'react';
 import { Properties } from './types';
 import './styles/index.css';
 import { toDefaults, getContainerClass, getLabelClass } from './helpers';
 
 /**
- * 
- * @param properties 
- * @returns
+ * Checkbox component with support for indeterminate state
+ * @param properties - Component properties
+ * @returns {JSX.Element} Checkbox component
  */
 export default function Checkbox(properties?: Properties) {
 	const defaults = toDefaults(properties);
-
 	const inputReference = useRef<HTMLInputElement>(null);
+
+	// Set indeterminate state on the input element
+	useEffect(() => {
+		if (inputReference.current) {
+			inputReference.current.indeterminate = defaults.indeterminate;
+		}
+	}, [defaults.indeterminate]);
 
 	const onChangeHandler = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
 		if (!defaults.disabled) {
@@ -32,7 +38,7 @@ export default function Checkbox(properties?: Properties) {
 	}, [defaults.disabled]);
 
 	return (
-		<div className={getContainerClass(defaults.theme, defaults.disabled)}>
+		<div className={getContainerClass(defaults.theme, defaults.disabled, defaults.indeterminate)}>
 			<div 
 				className="container"
 				onClick={onContainerClickHandler}
@@ -46,7 +52,7 @@ export default function Checkbox(properties?: Properties) {
 					onChange={onChangeHandler}
 					id={defaults.id}
 					disabled={defaults.disabled}
-					aria-checked={defaults.checked}
+					aria-checked={defaults.indeterminate ? 'mixed' : defaults.checked}
 				/>
 			</div>
 			{defaults.label && (

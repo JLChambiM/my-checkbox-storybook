@@ -30,10 +30,33 @@ export const Checked: Story = {
 	},
 };
 
+export const Indeterminate: Story = {
+	args: {
+		label: 'Indeterminate Checkbox',
+		indeterminate: true,
+	},
+};
+
 export const Disabled: Story = {
 	args: {
 		label: 'Disabled Checkbox',
 		disabled: true,
+	},
+};
+
+export const DisabledChecked: Story = {
+	args: {
+		label: 'Disabled Checked',
+		disabled: true,
+		checked: true,
+	},
+};
+
+export const DisabledIndeterminate: Story = {
+	args: {
+		label: 'Disabled Indeterminate',
+		disabled: true,
+		indeterminate: true,
 	},
 };
 
@@ -49,6 +72,22 @@ export const ThemeError: Story = {
 	args: {
 		label: 'Error Theme',
 		checked: true,
+		theme: 'error',
+	},
+};
+
+export const IndeterminateSecondary: Story = {
+	args: {
+		label: 'Indeterminate Secondary',
+		indeterminate: true,
+		theme: 'secondary',
+	},
+};
+
+export const IndeterminateError: Story = {
+	args: {
+		label: 'Indeterminate Error',
+		indeterminate: true,
 		theme: 'error',
 	},
 };

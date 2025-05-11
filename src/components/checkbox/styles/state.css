@@ -34,3 +34,43 @@
   color: var(--color-surface-text-disabled);
   cursor: not-allowed;
 }
+
+/* indeterminate state */
+.input:indeterminate {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.theme-secondary .input:indeterminate {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.theme-error .input:indeterminate {
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+/* indeterminate icon (dash instead of checkmark) */
+.input:indeterminate::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: white;
+  border: none;
+  transform: translate(-50%, -50%);
+  transition: background-color var(--animation-duration-standard) ease;
+}
+
+/* disabled indeterminate state */
+.disabled .input:indeterminate {
+  background-color: var(--color-surface-text-disabled);
+  border-color: transparent;
+}
+
+.disabled .input:indeterminate::after {
+  background-color: white;
+}
