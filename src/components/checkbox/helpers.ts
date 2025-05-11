@@ -3,23 +3,24 @@ import clsx from 'clsx';
 import { Properties } from './types';
 
 /**
- * 
- * @returns 
+ * Generates a unique ID for checkbox
+ * @returns {string} A unique checkbox ID
  */
 export const generateId = (): string => {
 	return `checkbox-${Math.random().toString(36).slice(2, 9)}`;
 };
 
 /**
- * 
- * @param properties
- * @returns
+ * Converts partial properties to complete properties with defaults
+ * @param properties - Partial properties
+ * @returns {Required<Properties>} Complete properties with defaults
  */
 export function toDefaults(properties?: Properties): Required<Properties> {
 	return _.defaults({}, properties, {
 		id: generateId(),
 		label: '',
 		checked: false,
+		indeterminate: false,
 		disabled: false,
 		theme: 'primary',
 		onChange: _.noop,
@@ -27,25 +28,27 @@ export function toDefaults(properties?: Properties): Required<Properties> {
 }
 
 /**
- * 
- * @param theme
- * @param disabled
- * @returns
+ * Gets CSS classes for the container element
+ * @param theme - Theme name
+ * @param disabled - Whether checkbox is disabled
+ * @param indeterminate - Whether checkbox is in indeterminate state
+ * @returns {string} CSS class names
  */
-export function getContainerClass(theme: string, disabled: boolean): string {
+export function getContainerClass(theme: string, disabled: boolean, indeterminate: boolean): string {
 	return clsx(
 		'wrapper',
 		`theme-${theme}`,
 		{
-			disabled
+			disabled,
+			indeterminate
 		}
 	);
 }
 
 /**
- * 
- * @param disabled
- * @returns
+ * Gets CSS classes for the label element
+ * @param disabled - Whether checkbox is disabled
+ * @returns {string} CSS class names
  */
 export function getLabelClass(disabled: boolean): string {
 	return clsx(
