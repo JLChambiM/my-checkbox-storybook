@@ -5,7 +5,8 @@ const config = {
     '@storybook/addon-onboarding',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-mdx-gfm'
+    // Quita temporalmente MDX hasta resolver TS
+    // '@storybook/addon-mdx-gfm'
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -21,21 +22,29 @@ const config = {
     },
   },
   webpackFinal: async (config) => {
-    // Add TypeScript support
-    config.module.rules.push({
-      test: /\.(ts|tsx)$/,
-      use: [
-        {
-          loader: require.resolve('ts-loader'),
-          options: {
-            transpileOnly: true,
-          },
-        },
-      ],
-    });
+    // Verificar si ya existe una regla para TypeScript
+    const hasTypeScriptRule = config.module.rules.some(rule => 
+      rule.test && rule.test.toString().includes('tsx?')
+    );
 
-    // Resolve TypeScript extensions
-    config.resolve.extensions.push('.ts', '.tsx');
+    if (!hasTypeScriptRule) {
+      config.module.rules.push({
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: require.resolve('ts-loader'),
+            options: {
+              transpileOnly: true,
+            },
+          },
+        ],
+      });
+    }
+
+    // Asegurar que las extensiones estén incluidas
+    if (!config.resolve.extensions.includes('.ts')) {
+      config.resolve.extensions.push('.ts', '.tsx');
+    }
 
     return config;
   },
