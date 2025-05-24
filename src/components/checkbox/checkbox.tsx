@@ -32,7 +32,7 @@ export default function Checkbox(properties?: Properties) {
 	}, [defaults.disabled]);
 
 	return (
-		<div className={getContainerClass(defaults.theme, defaults.disabled)}>
+		<div className={getContainerClass(defaults.variant, defaults.disabled)}>
 			<div 
 				className="container"
 				onClick={onContainerClickHandler}

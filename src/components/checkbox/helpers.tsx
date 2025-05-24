@@ -21,21 +21,22 @@ export function toDefaults(properties?: Properties): Required<Properties> {
 		label: '',
 		checked: false,
 		disabled: false,
-		theme: 'primary',
+		variant: 'primary',
 		onChange: _.noop,
 	}) as Required<Properties>;
 }
 
 /**
  * 
- * @param theme
+ * @param variant
  * @param disabled
  * @returns
  */
-export function getContainerClass(theme: string, disabled: boolean): string {
+export function getContainerClass(variant: string, disabled: boolean): string {
 	return clsx(
+		'checkbox',
 		'wrapper',
-		`theme-${theme}`,
+		`variant-${variant}`,
 		{
 			disabled
 		}
