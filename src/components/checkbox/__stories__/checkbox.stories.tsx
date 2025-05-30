@@ -13,16 +13,6 @@ const meta: Meta<typeof Checkbox> = {
 		indeterminate: {
 			control: 'boolean',
 		}
-	},
-	parameters: {
-		// Ensure dark mode testing works
-		themes: {
-			default: 'light',
-			list: [
-				{ name: 'light', class: '', color: '#ffffff' },
-				{ name: 'dark', class: 'dark', color: '#000000' }
-			]
-		}
 	}
 };
 
