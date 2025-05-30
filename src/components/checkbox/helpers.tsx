@@ -20,6 +20,7 @@ export function toDefaults(properties?: Properties): Required<Properties> {
 		id: generateId(),
 		label: '',
 		checked: false,
+		indeterminate: false,
 		disabled: false,
 		variant: 'primary',
 		onChange: _.noop,

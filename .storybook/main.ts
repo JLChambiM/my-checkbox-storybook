@@ -5,6 +5,7 @@ const config = {
     '@storybook/addon-onboarding',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-themes',
     // Quita temporalmente MDX hasta resolver TS
     // '@storybook/addon-mdx-gfm'
   ],
