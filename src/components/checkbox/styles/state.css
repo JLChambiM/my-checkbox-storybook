@@ -26,6 +26,15 @@
   border-color: transparent;
 }
 
+.checkbox.disabled .input:indeterminate {
+  background-color: var(--color-surface-text-disabled);
+  border-color: transparent;
+}
+
+.checkbox.disabled .input:indeterminate::after {
+  background-color: white;
+}
+
 .checkbox.disabled .container:hover::before {
   background-color: transparent;
 }

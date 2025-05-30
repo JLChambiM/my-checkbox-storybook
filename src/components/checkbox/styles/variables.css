@@ -1,4 +1,8 @@
-:root {
+/* Light mode explicit - Material Design 3 */
+:root,
+[data-theme="light"],
+.light,
+.sb-show-main:not([data-theme="dark"]):not(.dark) {
     --color-primary: rgb(103, 80, 164);
     --color-primary-container: rgb(234, 221, 255);
     --color-primary-hover: rgba(103, 80, 164, 0.08);
@@ -33,4 +37,4 @@
     
     /* animations */
     --animation-duration-standard: 0.2s;
-  }
+}

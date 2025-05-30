@@ -4,6 +4,11 @@
   border-color: var(--color-primary);
 }
 
+.checkbox.variant-primary .input:indeterminate {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
 .checkbox.variant-primary .container:hover::before {
   background-color: var(--color-primary-hover);
 }
@@ -22,6 +27,11 @@
   border-color: var(--color-secondary);
 }
 
+.checkbox.variant-secondary .input:indeterminate {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
 .checkbox.variant-secondary .container:hover::before {
   background-color: var(--color-secondary-hover);
 }
@@ -36,6 +46,11 @@
 
 /* variant: Error */
 .checkbox.variant-error .input:checked {
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.checkbox.variant-error .input:indeterminate {
   background-color: var(--color-error);
   border-color: var(--color-error);
 }

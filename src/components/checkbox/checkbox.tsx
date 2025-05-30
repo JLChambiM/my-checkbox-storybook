@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useEffect } from 'react';
 import { Properties } from './types';
 import './styles/index.css';
 import { toDefaults, getContainerClass, getLabelClass } from './helpers';
@@ -12,6 +12,13 @@ export default function Checkbox(properties?: Properties) {
 	const defaults = toDefaults(properties);
 
 	const inputReference = useRef<HTMLInputElement>(null);
+
+	// Sync indeterminate state with DOM property
+	useEffect(() => {
+		if (inputReference.current) {
+			inputReference.current.indeterminate = defaults.indeterminate;
+		}
+	}, [defaults.indeterminate]);
 
 	const onChangeHandler = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
 		if (!defaults.disabled) {
@@ -46,7 +53,7 @@ export default function Checkbox(properties?: Properties) {
 					onChange={onChangeHandler}
 					id={defaults.id}
 					disabled={defaults.disabled}
-					aria-checked={defaults.checked}
+					aria-checked={defaults.indeterminate ? 'mixed' : defaults.checked}
 				/>
 			</div>
 			{defaults.label && (

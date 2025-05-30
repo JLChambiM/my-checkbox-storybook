@@ -14,6 +14,11 @@ describe('components/checkbox', () => {
 			const checkbox = screen.getByRole('checkbox');
 			expect(checkbox).toBeChecked();
 		});
+		test('should render as indeterminate', () => {
+			render(<Checkbox indeterminate={true} />);
+			const checkbox = screen.getByRole('checkbox') as HTMLInputElement;
+			expect(checkbox.indeterminate).toBe(true);
+		});
 		test('should display label property', () => {
 			render(<Checkbox label="Test Label" />);
 			const label = screen.getByText('Test Label');
@@ -53,6 +58,11 @@ describe('components/checkbox', () => {
 			fireEvent.click(checkbox);
 			
 			expect(onChange).not.toHaveBeenCalled();
+		});
+		test('should have aria-checked="mixed" when indeterminate', () => {
+			render(<Checkbox indeterminate={true} />);
+			const checkbox = screen.getByRole('checkbox');
+			expect(checkbox).toHaveAttribute('aria-checked', 'mixed');
 		});
 	});
 });

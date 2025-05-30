@@ -1,0 +1,50 @@
+/* Dark mode explicit - Material Design 3 */
+[data-theme="dark"],
+.dark,
+.sb-show-main[data-theme="dark"],
+.sb-show-main.dark {
+    --color-primary: rgb(208, 188, 255);
+    --color-primary-container: rgb(79, 55, 139);
+    --color-primary-hover: rgba(208, 188, 255, 0.08);
+    --color-primary-pressed: rgba(208, 188, 255, 0.12);
+    
+    --color-secondary: rgb(196, 130, 255);
+    --color-secondary-container: rgb(74, 68, 88);
+    --color-secondary-hover: rgba(196, 130, 255, 0.08);
+    --color-secondary-pressed: rgba(196, 130, 255, 0.12);
+    
+    --color-error: rgb(242, 184, 181);
+    --color-error-container: rgb(140, 29, 24);
+    --color-error-hover: rgba(242, 184, 181, 0.08);
+    --color-error-pressed: rgba(242, 184, 181, 0.12);
+    
+    --color-surface-text: rgb(231, 225, 229);
+    --color-surface-text-disabled: rgba(231, 225, 229, 0.38);
+    --color-outline: rgb(147, 143, 153);
+    --color-outline-disabled: rgba(231, 225, 229, 0.12);
+}
+
+/* System preference support */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]):not(.light) {
+        --color-primary: rgb(208, 188, 255);
+        --color-primary-container: rgb(79, 55, 139);
+        --color-primary-hover: rgba(208, 188, 255, 0.08);
+        --color-primary-pressed: rgba(208, 188, 255, 0.12);
+        
+        --color-secondary: rgb(196, 130, 255);
+        --color-secondary-container: rgb(74, 68, 88);
+        --color-secondary-hover: rgba(196, 130, 255, 0.08);
+        --color-secondary-pressed: rgba(196, 130, 255, 0.12);
+        
+        --color-error: rgb(242, 184, 181);
+        --color-error-container: rgb(140, 29, 24);
+        --color-error-hover: rgba(242, 184, 181, 0.08);
+        --color-error-pressed: rgba(242, 184, 181, 0.12);
+        
+        --color-surface-text: rgb(231, 225, 229);
+        --color-surface-text-disabled: rgba(231, 225, 229, 0.38);
+        --color-outline: rgb(147, 143, 153);
+        --color-outline-disabled: rgba(231, 225, 229, 0.12);
+    }
+}

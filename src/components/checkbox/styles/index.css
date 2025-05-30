@@ -1,4 +1,5 @@
 @import './variables.css';
+@import './variables-dark.css';
 @import './base.css';
 @import './layout.css';
 @import './module.css';

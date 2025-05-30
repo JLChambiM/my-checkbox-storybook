@@ -9,6 +9,19 @@ const meta: Meta<typeof Checkbox> = {
 		variant: {
 			control: 'select',
 			options: ['primary', 'secondary', 'error'],
+		},
+		indeterminate: {
+			control: 'boolean',
+		}
+	},
+	parameters: {
+		// Ensure dark mode testing works
+		themes: {
+			default: 'light',
+			list: [
+				{ name: 'light', class: '', color: '#ffffff' },
+				{ name: 'dark', class: 'dark', color: '#000000' }
+			]
 		}
 	}
 };
@@ -27,6 +40,13 @@ export const Checked: Story = {
 	args: {
 		label: 'Checked Checkbox',
 		checked: true,
+	},
+};
+
+export const Indeterminate: Story = {
+	args: {
+		label: 'Indeterminate Checkbox',
+		indeterminate: true,
 	},
 };
 

@@ -16,6 +16,12 @@ export type Properties = {
   checked?: boolean;
   
   /**
+   * 
+   * @default false
+   */
+  indeterminate?: boolean;
+  
+  /**
    *
    * @default false
    */
