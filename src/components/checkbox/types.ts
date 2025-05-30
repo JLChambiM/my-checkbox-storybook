@@ -28,7 +28,7 @@ export type Properties = {
   disabled?: boolean;
   
   /**
-   * Visual variant of the checkbox
+   * 
    * @default 'primary'
    */
   variant?: 'primary' | 'secondary' | 'error';

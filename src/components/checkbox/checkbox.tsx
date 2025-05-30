@@ -13,7 +13,6 @@ export default function Checkbox(properties?: Properties) {
 
 	const inputReference = useRef<HTMLInputElement>(null);
 
-	// Sync indeterminate state with DOM property
 	useEffect(() => {
 		if (inputReference.current) {
 			inputReference.current.indeterminate = defaults.indeterminate;
