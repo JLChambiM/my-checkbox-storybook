@@ -9,9 +9,6 @@ const meta: Meta<typeof Checkbox> = {
 		variant: {
 			control: 'select',
 			options: ['primary', 'secondary', 'error'],
-		},
-		indeterminate: {
-			control: 'boolean',
 		}
 	}
 };
@@ -22,21 +19,24 @@ type Story = StoryObj<typeof Checkbox>;
 export const Default: Story = {
 	args: {
 		label: 'Default Checkbox',
-		checked: false,
+		value: false,
+		onChange: (event, properties) => {
+			console.log('onChange', event, properties);
+		},
 	},
 };
 
 export const Checked: Story = {
 	args: {
 		label: 'Checked Checkbox',
-		checked: true,
+		value: true,
 	},
 };
 
 export const Indeterminate: Story = {
 	args: {
 		label: 'Indeterminate Checkbox',
-		indeterminate: true,
+		value: null,
 	},
 };
 
@@ -50,7 +50,7 @@ export const Disabled: Story = {
 export const VariantSecondary: Story = {
 	args: {
 		label: 'Secondary Variant',
-		checked: true,
+		value: true,
 		variant: 'secondary',
 	},
 };
@@ -58,7 +58,7 @@ export const VariantSecondary: Story = {
 export const ThemeError: Story = {
 	args: {
 		label: 'Error Variant',
-		checked: true,
+		value: true,
 		variant: 'error',
 	},
 };
