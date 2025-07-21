@@ -19,12 +19,18 @@ type ChipCommonProperties = {
   // ===== COMPORTAMIENTO =====
   /**
    * Evento al presionar el chip.
+   * Proporciona el evento sintético y las propiedades actuales.
    */
-  onPress?: () => void;
+  onPress?: (event: React.SyntheticEvent, properties: Properties) => void;
   /** 
-   * Evento al hacer long press
+   * Evento al hacer long press.
+   * Proporciona el evento sintético y las propiedades actuales.
    */
-  onLongPress?: () => void;
+  onLongPress?: (event: React.SyntheticEvent, properties: Properties) => void;
+  /**
+   * Evento onChange que proporciona el evento sintético y las propiedades actuales.
+   */
+  onChange?: (event: React.SyntheticEvent, properties: Properties) => void;
 
   // ===== ESTADOS =====
   /**
@@ -45,11 +51,6 @@ type ChipCommonProperties = {
   accessibilityLabel?: string;
 
   // ===== APARIENCIA =====
-  /**
-   * color del chip.
-   * @default 'primary'
-   */
-  color?: 'primary' | 'secondary';
   /**
    * Densidad del chip.
    * @default 'comfortable'
@@ -74,18 +75,20 @@ type FilterChipProperties = ChipCommonProperties & {
    */
   selected?: boolean;
   /** 
-   * Callback al seleccionar/deseleccionar el chip. 
+   * Callback al seleccionar/deseleccionar el chip.
+   * Proporciona el estado seleccionado, el evento sintético y las propiedades actuales.
    */
-  onSelect?: (selected: boolean) => void;
+  onSelect?: (selected: boolean, event: React.SyntheticEvent, properties: Properties) => void;
   /** 
    * Si el chip es removible (muestra ícono de eliminar). 
    * @default false 
    */
   removable?: boolean;
   /** 
-   * Callback al remover el chip. 
+   * Callback al remover el chip.
+   * Proporciona el evento sintético y las propiedades actuales.
    */
-  onRemove?: () => void;
+  onRemove?: (event: React.SyntheticEvent, properties: Properties) => void;
 };
 
 type InputChipProperties = ChipCommonProperties & {
@@ -96,9 +99,10 @@ type InputChipProperties = ChipCommonProperties & {
    */
   selected?: boolean;
   /** 
-   * Callback al seleccionar/deseleccionar el chip. 
+   * Callback al seleccionar/deseleccionar el chip.
+   * Proporciona el estado seleccionado, el evento sintético y las propiedades actuales.
    */
-  onSelect?: (selected: boolean) => void;
+  onSelect?: (selected: boolean, event: React.SyntheticEvent, properties: Properties) => void;
   /** 
    * Avatar opcional (imagen o nodo React).
    */
@@ -110,8 +114,9 @@ type InputChipProperties = ChipCommonProperties & {
   removable?: boolean;
   /** 
    * Callback al remover el chip.
+   * Proporciona el evento sintético y las propiedades actuales.
    */
-  onRemove?: () => void;
+  onRemove?: (event: React.SyntheticEvent, properties: Properties) => void;
 };
 
 type SuggestionChipProperties = ChipCommonProperties & {
