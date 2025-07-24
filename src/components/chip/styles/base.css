@@ -1,0 +1,66 @@
+/*
+  base.css
+  --------
+  Define los estilos base y la estructura principal del componente Chip.
+  Aquí se establecen las reglas generales y la estructura principal del chip y sus subelementos.
+*/
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--chip-spacing-vertical) var(--chip-spacing-horizontal);
+    border: 1px solid transparent; /* Base border, will be customized by mode */
+    border-radius: var(--chip-size-border-radius);
+    height: var(--chip-size-height);
+    font-family: var(--chip-typography-font-family);
+    font-size: var(--chip-typography-font-size);
+    line-height: var(--chip-typography-line-height);
+    letter-spacing: var(--chip-typography-letter-spacing);
+    cursor: pointer;
+    transition: background-color var(--chip-animation-duration-standard) var(--chip-animation-easing-standard),
+                border-color var(--chip-animation-duration-standard) var(--chip-animation-easing-standard),
+                box-shadow var(--chip-animation-duration-standard) var(--chip-animation-easing-standard); /* Add transition for smooth state changes */
+    box-sizing: border-box;
+}
+
+.chip__avatar,
+.chip__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.chip__content {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.chip__remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: var(--chip-spacing-text-remove);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+.chip__remove:hover:not(:disabled) {
+    background: rgba(103, 80, 164, 0.08);
+}
+.chip__remove:active:not(:disabled) {
+    background: rgba(103, 80, 164, 0.16);
+}
+.chip__remove:focus {
+    outline: 2px solid var(--chip-color-primary);
+    outline-offset: 1px;
+}

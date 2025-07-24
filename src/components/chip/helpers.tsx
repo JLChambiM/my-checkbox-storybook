@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import clsx from 'clsx';
-import React from 'react';
 import type { Properties } from './types';
 
 /**
@@ -24,8 +23,6 @@ export function toDefaults(properties?: Properties): Required<Properties> {
     disabled: false,
     elevated: false,
 
-    'aria-label':"",
-
     // Eventos
     onClick: () => {},
     onRemove: () => {},
@@ -36,4 +33,17 @@ export function toDefaults(properties?: Properties): Required<Properties> {
 /**
  * Genera las clases CSS del chip basado en sus propiedades
  */
+export function toClasses(properties: Required<Properties>): string {
+  const { variant, mode, selected, disabled, elevated } = properties;
 
+  return clsx(
+    'chip', // Clase base para todos los chips
+    `chip--${variant}`, // Clase para la variante (assist, filter, input, suggestion)
+    `chip--${mode}`, // Clase para el modo (flat, outlined)
+    {
+      'chip--selected': selected, // Clase si está seleccionado
+      'chip--disabled': disabled, // Clase si está deshabilitado
+      'chip--elevated': elevated, // Clase si está elevado
+    }
+  );
+}

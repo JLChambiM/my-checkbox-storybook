@@ -1,0 +1,20 @@
+/* Assist Chip Variant: Variante de chip de asistencia, generalmente sin estilos adicionales. */
+.chip--assist {
+    /* No significant variant-specific styles typically needed beyond base, mode, and state */
+}
+
+/* Filter Chip Variant: Variante de chip de filtro, el estado seleccionado se maneja en state.css. */
+.chip--filter {
+    /* Filter chips have the selected state, which is handled in _state.css */
+}
+
+/* Input Chip Variant: Variante de chip de entrada, ajusta el padding para el icono de eliminar. */
+.chip--input {
+    /* Input chips often have a slightly different padding to accommodate the remove icon */
+    padding-right: 8px; /* Example: adjust padding to make space for remove icon */
+}
+
+/* Suggestion Chip Variant: Variante de chip de sugerencia, generalmente sin estilos adicionales. */
+.chip--suggestion {
+     /* No significant variant-specific styles typically needed */
+}
