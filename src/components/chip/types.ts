@@ -15,7 +15,7 @@ export type Properties = {
   /** Estilo visual (por defecto: 'flat') */
   mode?: Mode;
   /** Icono al inicio (no usar junto con avatar) */
-  startIcon?: ReactNode;
+  Icon?: ReactNode;
   /** Avatar al inicio (solo para input chips, no usar junto con startIcon) */
   avatar?: ReactNode;
   /** Indica si el chip está seleccionado (solo filter/input) */
@@ -32,10 +32,6 @@ export type Properties = {
   onToggle?: (selected: boolean) => void;
   /** Texto alternativo para accesibilidad */
   'aria-label'?: string;
-  /** Estilos personalizados */
-  style?: CSSProperties;
-  /** Clase CSS personalizada */
-  className?: string;
 };
 
 /** Props específicas por variante (uso interno, para validación estricta) */
