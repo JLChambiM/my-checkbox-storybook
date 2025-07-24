@@ -1,0 +1,38 @@
+/*
+  variables.css
+  -------------
+  Centraliza todas las variables CSS utilizadas por el componente Chip para colores, tipografía, espaciados, tamaños y animaciones.
+*/
+:root {
+    /* Colors */
+    --chip-color-primary: #6750A4; /* Example primary color */
+    --chip-color-on-primary: #FFFFFF;
+    --chip-color-surface: #FFFBFE; /* Example surface color */
+    --chip-color-on-surface: #1C1B1F;
+    --chip-color-outline: #79747E;
+    --chip-color-disabled: #E7E0EC;
+    --chip-color-on-disabled: #49454F;
+  
+    /* Typography */
+    --chip-typography-font-family: 'Roboto', sans-serif; /* Example font */
+    --chip-typography-font-size: 0.875rem; /* 14px */
+    --chip-typography-line-height: 1.25rem; /* 20px */
+    --chip-typography-letter-spacing: 0.00625rem; /* 0.1px */
+  
+    /* Spacing */
+    --chip-spacing-horizontal: 12px;
+    --chip-spacing-vertical: 8px;
+    --chip-spacing-icon-text: 8px;
+    --chip-spacing-text-remove: 8px;
+  
+    /* Size */
+    --chip-size-height: 32px;
+    --chip-size-border-radius: 8px; /* Fully rounded corners */
+  
+    /* Animation */
+    --chip-animation-duration-standard: 0.2s;
+    --chip-animation-easing-standard: ease;
+  
+     /* Add RGB version of on-surface for alpha transparencies */
+    --chip-color-on-surface-rgb: 28, 27, 31; /* RGB values for #1C1B1F */
+  }
