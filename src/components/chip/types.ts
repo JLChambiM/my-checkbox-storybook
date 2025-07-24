@@ -1,4 +1,4 @@
-import { ReactNode, MouseEvent, CSSProperties } from 'react';
+import { ReactNode } from 'react';
 
 /** Tipos de chip según Material Design 3 */
 export type Variant = 'assist' | 'filter' | 'input' | 'suggestion';
@@ -15,7 +15,7 @@ export type Properties = {
   /** Estilo visual (por defecto: 'flat') */
   mode?: Mode;
   /** Icono al inicio (no usar junto con avatar) */
-  Icon?: ReactNode;
+  icon?: ReactNode; // Changed from Icon to icon
   /** Avatar al inicio (solo para input chips, no usar junto con startIcon) */
   avatar?: ReactNode;
   /** Indica si el chip está seleccionado (solo filter/input) */
@@ -25,13 +25,11 @@ export type Properties = {
   /** Aplica elevación (sombra) */
   elevated?: boolean;
   /** Evento click */
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void; // Corrected event type
   /** Evento para remover el chip (muestra botón X, típico en input chips) */
-  onRemove?: () => void;
+  onRemove?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /** Evento para alternar selección (más semántico que onClick en filter chips) */
   onToggle?: (selected: boolean) => void;
-  /** Texto alternativo para accesibilidad */
-  'aria-label'?: string;
 };
 
 /** Props específicas por variante (uso interno, para validación estricta) */
