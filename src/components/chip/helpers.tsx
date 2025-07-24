@@ -1,9 +1,6 @@
 import _ from 'lodash';
 import clsx from 'clsx';
-<<<<<<< HEAD
 import React from 'react';
-=======
->>>>>>> 18e16d1aa108978dd7cfa037a1f1bbae2f5376c7
 import type { Properties } from './types';
 
 /**
@@ -11,7 +8,6 @@ import type { Properties } from './types';
  * @param properties - Propiedades del chip
  * @returns Propiedades completas con valores por defecto
  */
-<<<<<<< HEAD
 export function toDefaults(properties?: Properties): Required<Properties> {
   return _.defaults({}, properties, {
     // Variante y modo
@@ -92,70 +88,12 @@ function hasLeadingElement(properties: ReturnType<typeof toDefaults>): boolean {
   
   // Otros variants solo muestran icono
   return !!icon;
-=======
-export function toDefaults(properties?: Properties): any {
-	return _.defaults(properties, {
-		label: '',
-		children: null,
-		icon: null,
-		onPress: _.noop,
-		onLongPress: _.noop,
-		onChange: _.noop,
-		disabled: false,
-		elevated: false,
-		accessibilityLabel: '',
-		density: 'comfortable',
-		shape: 'rounded',
-		variant: 'assist',
-		// Props específicas para filter e input
-		selected: false,
-		onSelect: _.noop,
-		removable: false,
-		onRemove: _.noop,
-		avatar: null,
-	});
-}
-
-/**
- * Genera las clases CSS del chip
- */
-export function getChipClasses({
-	variant,
-	density,
-	shape,
-	disabled,
-	elevated,
-	selected,
-	removable,
-}: {
-	variant: string;
-	density: string;
-	shape: string;
-	disabled: boolean;
-	elevated: boolean;
-	selected: boolean;
-	removable: boolean;
-}): string {
-	return clsx(
-		'chip',
-		`chip--${variant}`,
-		`chip--${density}`,
-		`chip--${shape}`,
-		{
-			'chip--disabled': disabled,
-			'chip--elevated': elevated,
-			'chip--selected': selected,
-			'chip--removable': removable,
-		}
-	);
->>>>>>> 18e16d1aa108978dd7cfa037a1f1bbae2f5376c7
 }
 
 /**
  * Determina el contenido del chip basado en children o label.
  */
 export function getChipContent(children?: React.ReactNode, label?: string): React.ReactNode {
-<<<<<<< HEAD
   return children || label || '';
 }
 
@@ -235,16 +173,12 @@ export function renderTrailingElement({
       {closeIcon || defaultCloseIcon}
     </button>
   );
-=======
-	return children || label;
->>>>>>> 18e16d1aa108978dd7cfa037a1f1bbae2f5376c7
 }
 
 /**
  * Maneja el click del chip
  */
 export function handleChipClick(
-<<<<<<< HEAD
   properties: ReturnType<typeof toDefaults>,
   event: React.MouseEvent
 ): void {
@@ -253,29 +187,12 @@ export function handleChipClick(
   if (disabled) return;
 
   onPress?.(event);
-=======
-	properties: Properties,
-	event: React.MouseEvent
-): void {
-	if (properties.disabled) return;
-
-	// Llamar callbacks en orden
-	properties.onChange?.(event, properties);
-	properties.onPress?.(event, properties);
-
-	// Selección para filter/input
-	if (properties.variant === 'filter' || properties.variant === 'input') {
-		const newSelected = !properties.selected;
-		properties.onSelect?.(newSelected, event, properties);
-	}
->>>>>>> 18e16d1aa108978dd7cfa037a1f1bbae2f5376c7
 }
 
 /**
  * Maneja el long press del chip
  */
 export function handleLongPress(
-<<<<<<< HEAD
   properties: ReturnType<typeof toDefaults>,
   event: React.MouseEvent
 ): void {
@@ -284,19 +201,11 @@ export function handleLongPress(
   if (disabled || !onLongPress) return;
   
   onLongPress();
-=======
-	properties: Properties,
-	event: React.MouseEvent
-): void {
-	if (properties.disabled) return;
-	properties.onLongPress?.(event, properties);
->>>>>>> 18e16d1aa108978dd7cfa037a1f1bbae2f5376c7
 }
 
 /**
  * Maneja el click del botón remove
  */
-<<<<<<< HEAD
 export function handleCloseClick(
   properties: ReturnType<typeof toDefaults>,
   event: React.MouseEvent
@@ -314,18 +223,3 @@ export function handleCloseClick(
     onClose();
   }
 }
-=======
-export function handleRemoveClick(
-	properties: Properties,
-	event: React.MouseEvent
-): void {
-	if (properties.disabled) return;
-	
-	event.stopPropagation();
-	
-	// Solo llamar onRemove si existe (filter e input chips)
-	if ('onRemove' in properties && properties.onRemove) {
-		properties.onRemove(event, properties);
-	}
-}
->>>>>>> 18e16d1aa108978dd7cfa037a1f1bbae2f5376c7
