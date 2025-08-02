@@ -1,12 +1,13 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-/** Tipos de chip según Material Design 3 */
-export type Variant = 'assist' | 'filter' | 'input' | 'suggestion';
+type AssistExcludedProperties  = 'selected' | 'onToggle' | 'onRemove' | 'avatar';
+type FilterExcludedProperties  = 'onRemove' | 'avatar';
+type InputExcludedProperties  = 'onToggle';
+type SuggestionExcludedProperties  = 'selected' | 'onToggle' | 'onRemove' | 'avatar';
+type Variant = 'assist' | 'filter' | 'input' | 'suggestion';
+type Mode = 'flat' | 'outlined';
 
-/** Modo visual del chip */
-export type Mode = 'flat' | 'outlined';
 
-/** Props base del componente Chip (API esencial, cubre el 80% de los casos) */
 export type Properties = {
   /** Contenido principal del chip */
   children: ReactNode;
@@ -25,32 +26,33 @@ export type Properties = {
   /** Aplica elevación (sombra) */
   elevated?: boolean;
   /** Evento click */
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void; // Corrected event type
+  onClick?: (event: React.SyntheticEvent, properties: Properties) => void;
   /** Evento para remover el chip (muestra botón X, típico en input chips) */
-  onRemove?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onRemove?: (event: React.SyntheticEvent, properties: Properties) => void;
   /** Evento para alternar selección (más semántico que onClick en filter chips) */
-  onToggle?: (selected: boolean) => void;
+  onToggle?: (event: React.SyntheticEvent, selected: boolean, properties: Properties) => void;
 };
 
-/** Props específicas por variante (uso interno, para validación estricta) */
-export type AssistProperties = Omit<Properties, 'selected' | 'onToggle' | 'onRemove' | 'avatar'> & {
+
+
+export type AssistProperties = Omit<Properties, AssistExcludedProperties> & {  
   variant: 'assist';
 };
 
-export type FilterProperties = Omit<Properties, 'onRemove' | 'avatar'> & {
+export type FilterProperties = Omit<Properties, FilterExcludedProperties> & {
   variant: 'filter';
 };
 
-export type InputProperties = Omit<Properties, 'onToggle'> & {
+export type InputProperties = Omit<Properties, InputExcludedProperties> & {
   variant: 'input';
 };
 
-export type SuggestionProperties = Omit<Properties, 'selected' | 'onToggle' | 'onRemove' | 'avatar'> & {
+export type SuggestionProperties = Omit<Properties, SuggestionExcludedProperties> & {
   variant: 'suggestion';
 };
 
-/** Unión estricta para validación por variante */
-export type StrictChipProps =
+
+export type ChipsProperties =
   | AssistProperties
   | FilterProperties
   | InputProperties

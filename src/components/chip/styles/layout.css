@@ -1,34 +1,53 @@
 /*
   layout.css
   ----------
-  Define la disposición y el espaciado interno de los elementos del chip.
-  Aquí se gestionan los tamaños y el gap entre iconos, avatares y texto.
+  Estilos de layout para elementos hijos del chip
+  Define la estructura interna y disposición de iconos, avatares, texto y botones
 */
-.chip {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--chip-spacing-icon-text);
-}
 
-.chip__avatar,
 .chip__icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: none;
-    margin-right: 0;
-}
-
-.chip__remove {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    min-height: 24px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    width: var(--chip-icon-size);
+    height: var(--chip-icon-size);
+    flex-shrink: 0;
+  }
+  
+  .chip__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--chip-avatar-size);
+    height: var(--chip-avatar-size);
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .chip__label {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .chip__remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--chip-remove-size);
+    height: var(--chip-remove-size);
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
     line-height: 1;
-}
+    color: inherit;
+    flex-shrink: 0;
+    transition: background-color var(--chip-transition-duration) var(--chip-transition-easing);
+  }
