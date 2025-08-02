@@ -1,18 +1,23 @@
 /*
   mode.css
   --------
-  Define los diferentes modos visuales del chip (flat, outlined) separando la lógica de presentación.
+  Estilos para los diferentes modos visuales del chip
+  Define las variaciones de presentación: flat (filled) y outlined
 */
-/* Flat (Filled) Mode */
-.chip--flat {
-    background-color: var(--chip-color-surface); /* Example: Use surface color for flat background */
-    color: var(--chip-color-on-surface); /* Example: Use on-surface color for text */
+
+/* ==========================================
+   FLAT MODE (Filled)
+   ========================================== */
+   .chip--flat {
+    background-color: var(--chip-color-surface-variant);
+    color: var(--chip-color-on-surface-variant);
   }
   
-  /* Outlined Mode */
+  /* ==========================================
+     OUTLINED MODE
+     ========================================== */
   .chip--outlined {
     background-color: transparent;
-    border-color: var(--chip-color-outline); /* Use outline color for border */
-    color: var(--chip-color-on-surface); /* Example: Use on-surface color for text */
+    border-color: var(--chip-color-outline);
+    color: var(--chip-color-on-surface);
   }
-  

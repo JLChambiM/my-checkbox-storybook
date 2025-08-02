@@ -1,38 +1,57 @@
 /*
   variables.css
   -------------
-  Centraliza todas las variables CSS utilizadas por el componente Chip para colores, tipografía, espaciados, tamaños y animaciones.
+  Design tokens y variables CSS para el componente Chip
+  Basado en Material Design 3 specifications
 */
 :root {
-    /* Colors */
-    --chip-color-primary: #6750A4; /* Example primary color */
-    --chip-color-on-primary: #FFFFFF;
-    --chip-color-surface: #FFFBFE; /* Example surface color */
-    --chip-color-on-surface: #1C1B1F;
-    --chip-color-outline: #79747E;
-    --chip-color-disabled: #E7E0EC;
-    --chip-color-on-disabled: #49454F;
+  /* ==========================================
+     COLOR TOKENS
+     ========================================== */
+  --chip-color-primary: #6750A4;
+  --chip-color-on-primary: #FFFFFF;
+  --chip-color-surface: #FEF7FF;
+  --chip-color-on-surface: #1D1B20;
+  --chip-color-surface-variant: #ffffff;
+  --chip-color-on-surface-variant: #49454F;
+  --chip-color-outline: #79747E;
+  --chip-color-outline-variant: #CAC4D0;
   
-    /* Typography */
-    --chip-typography-font-family: 'Roboto', sans-serif; /* Example font */
-    --chip-typography-font-size: 0.875rem; /* 14px */
-    --chip-typography-line-height: 1.25rem; /* 20px */
-    --chip-typography-letter-spacing: 0.00625rem; /* 0.1px */
+  /* ==========================================
+     TYPOGRAPHY TOKENS
+     ========================================== */
+  --chip-font-family: 'Roboto', system-ui, sans-serif;
+  --chip-font-size: 0.875rem; /* 14px */
+  --chip-line-height: 1.25rem; /* 20px */
+  --chip-letter-spacing: 0.00625rem; /* 0.1px */
+  --chip-font-weight: 500;
   
-    /* Spacing */
-    --chip-spacing-horizontal: 12px;
-    --chip-spacing-vertical: 8px;
-    --chip-spacing-icon-text: 8px;
-    --chip-spacing-text-remove: 8px;
+  /* ==========================================
+     SIZE TOKENS
+     ========================================== */
+  --chip-height: 32px;
+  --chip-border-radius: 8px;
+  --chip-border-width: 0.5px;
   
-    /* Size */
-    --chip-size-height: 32px;
-    --chip-size-border-radius: 8px; /* Fully rounded corners */
+  /* ==========================================
+     SPACING TOKENS
+     ========================================== */
+  --chip-padding-horizontal: 16px;
+  --chip-padding-vertical: 6px;
+  --chip-gap: 8px;
+  --chip-icon-size: 18px;
+  --chip-avatar-size: 24px;
+  --chip-remove-size: 18px;
   
-    /* Animation */
-    --chip-animation-duration-standard: 0.2s;
-    --chip-animation-easing-standard: ease;
+  /* ==========================================
+     ANIMATION TOKENS
+     ========================================== */
+  --chip-transition-duration: 0.2s;
+  --chip-transition-easing: cubic-bezier(0.2, 0.0, 0, 1.0);
   
-     /* Add RGB version of on-surface for alpha transparencies */
-    --chip-color-on-surface-rgb: 28, 27, 31; /* RGB values for #1C1B1F */
-  }
+  /* ==========================================
+     ELEVATION TOKENS
+     ========================================== */
+  --chip-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15);
+  --chip-elevation-2: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.15);
+}

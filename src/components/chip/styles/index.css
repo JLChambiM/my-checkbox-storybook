@@ -1,6 +1,24 @@
+/*
+  index.css
+  ---------
+  Archivo principal que importa todos los estilos del componente Chip
+  Siguiendo la arquitectura SMACSS en el orden correcto
+*/
+
+/* Base - Variables y tokens de diseño */
 @import './variables.css';
-@import './module.css';
+
+/* Base - Estilos fundamentales */
+@import './base.css';
+
+/* Layout - Estructura de elementos hijos */
 @import './layout.css';
+
+/* Modules - Modos visuales */
 @import './mode.css';
-@import './state.css';
+
+/* Modules - Variantes funcionales */
 @import './variant.css';
+
+/* State - Estados interactivos */
+@import './state.css';

@@ -1,49 +1,103 @@
 /*
   state.css
   ---------
-  Gestiona los diferentes estados del componente Chip: hover, focus, active, disabled, selected, elevated, etc.
+  Estados interactivos del componente Chip
+  Maneja hover, focus, active, selected, disabled y elevated
 */
-/* Hover State */
-.chip:hover {
-    /* Example: subtle background color change on hover */
-    background-color: rgba(var(--chip-color-on-surface-rgb, 28, 27, 31), 0.08); /* 8% on-surface overlay */
+
+/* ==========================================
+   HOVER STATE
+   ========================================== */
+   .chip:hover:not(.chip--disabled) {
+    box-shadow: var(--chip-elevation-1);
   }
   
-  /* Focus State */
-  .chip:focus {
-    outline: 2px solid var(--chip-color-primary); /* Example: primary color outline on focus */
-    outline-offset: 1px; /* Add a small offset */
+  .chip--flat:hover:not(.chip--disabled) {
+    background-color: color-mix(in srgb, var(--chip-color-surface-variant) 92%, var(--chip-color-on-surface-variant));
   }
   
-  /* Active State (Pressed) */
-  .chip:active {
-    /* Example: slightly darker background color on active */
-    background-color: rgba(var(--chip-color-on-surface-rgb, 28, 27, 31), 0.12); /* 12% on-surface overlay */
+  .chip--outlined:hover:not(.chip--disabled) {
+    background-color: color-mix(in srgb, transparent 92%, var(--chip-color-on-surface));
   }
   
-  /* Disabled State */
-  .chip:disabled,
-  .chip[aria-disabled="true"] {
-    opacity: 0.38; /* MD3 recommended opacity for disabled elements */
-    cursor: not-allowed;
+  /* ==========================================
+     FOCUS STATE
+     ========================================== */
+  .chip:focus-visible:not(.chip--disabled) {
+    outline: 2px solid var(--chip-color-primary);
+    outline-offset: 2px;
   }
   
-  /* Selected State (for filter chips) */
+  /* ==========================================
+     ACTIVE STATE
+     ========================================== */
+  .chip:active:not(.chip--disabled) {
+    box-shadow: none;
+  }
+  
+  .chip--flat:active:not(.chip--disabled) {
+    background-color: color-mix(in srgb, var(--chip-color-surface-variant) 88%, var(--chip-color-on-surface-variant));
+  }
+  
+  .chip--outlined:active:not(.chip--disabled) {
+    background-color: color-mix(in srgb, transparent 88%, var(--chip-color-on-surface));
+  }
+  
+  /* ==========================================
+     SELECTED STATE (Filter chips)
+     ========================================== */
   .chip--filter.chip--selected {
-    background-color: var(--chip-color-primary); /* Example: primary color for selected filter chip */
-    color: var(--chip-color-on-primary); /* Example: on-primary color for text in selected state */
+    background-color: var(--chip-color-surface-variant);
+    color: var(--chip-color-on-surface-variant);
   }
   
-  /* Elevated State (example, typically combined with other states) */
+  .chip--filter.chip--selected.chip--flat {
+    background-color: var(--chip-color-primary);
+    color: var(--chip-color-on-primary);
+  }
+  
+  .chip--filter.chip--selected.chip--outlined {
+    background-color: var(--chip-color-surface-variant);
+    border-color: var(--chip-color-primary);
+    color: var(--chip-color-on-surface-variant);
+  }
+  
+  /* ==========================================
+     ELEVATED STATE
+     ========================================== */
   .chip--elevated {
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15); /* Example elevation shadow */
+    box-shadow: var(--chip-elevation-1);
   }
   
-  /* Adjustments for Elevated state on hover/focus/active */
-  .chip--elevated:hover {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px 2px 6px rgba(0, 0, 0, 0.15);
+  .chip--elevated:hover:not(.chip--disabled) {
+    box-shadow: var(--chip-elevation-2);
   }
   
-  .chip--elevated:active {
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3), 0px 0px 4px rgba(0, 0, 0, 0.15);
+  .chip--elevated:active:not(.chip--disabled) {
+    box-shadow: var(--chip-elevation-1);
+  }
+  
+  /* ==========================================
+     DISABLED STATE
+     ========================================== */
+  .chip--disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  /* ==========================================
+     REMOVE BUTTON STATES
+     ========================================== */
+  .chip__remove:hover:not(:disabled) {
+    background-color: color-mix(in srgb, transparent 92%, currentColor);
+  }
+  
+  .chip__remove:active:not(:disabled) {
+    background-color: color-mix(in srgb, transparent 88%, currentColor);
+  }
+  
+  .chip__remove:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 1px;
   }
