@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import type { Properties } from './types';
 import { toDefaults, toClasses } from './helpers';
+import './styles/index.css';
 
 export default function Chip(properties?: Properties) {
   const defaults = toDefaults(properties);
