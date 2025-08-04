@@ -53,7 +53,7 @@ function App() {
       <h2>Assist Chip</h2>
       <div style={chipRow}>
         <Chip>Assist simple</Chip>
-        <Chip icon={<Icon />}>Assist con icono</Chip>
+        <Chip icon={<Icon />} children="assist"></Chip>
       </div>
 
       <h2 style={{ marginTop: 32 }}>Filter Chip</h2>
@@ -61,14 +61,14 @@ function App() {
         <Chip
           variant="filter"
           selected={selectedFilter[0]}
-          onToggle={sel => setSelectedFilter([sel, selectedFilter[1]])}
+          onToggle={(event, selected) => setSelectedFilter([selected, selectedFilter[1]])}
         >
           Filtro 1
         </Chip>
         <Chip
           variant="filter"
           selected={selectedFilter[1]}
-          onToggle={sel => setSelectedFilter([selectedFilter[0], sel])}
+          onToggle={(event, selected) => setSelectedFilter([selectedFilter[0], selected])}
           icon={<Icon />}
         >
           Filtro 2 con icono
