@@ -37,9 +37,9 @@ type Story = StoryObj<typeof Chip>;
 // Assist Chip - Default
 export const Assist: Story = {
 	args: {
-		children: 'Assist Chip',
-		variant: 'assist',
-		mode: 'flat',
+		children: 'Defaults',
+		// variant: 'assist',
+		mode: 'outlined',
 	},
 };
 
@@ -49,7 +49,7 @@ export const AssistWithIcon: Story = {
 		children: 'Assist with Icon',
 		variant: 'assist',
 		mode: 'flat',
-		icon: <Icon name="search" size="small" variant="outlined" />,
+		icon: <Icon name="1k" color='red'/>,
 	},
 	parameters: {
 		docs: {
