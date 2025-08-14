@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+type variant = 'primary' | 'secondary' | 'error';
 export type Properties = {
   /**
    *
@@ -7,8 +9,8 @@ export type Properties = {
   /**
    *
    */
-  label?: string;
-  
+  children?: ReactNode;
+
   /**
    *
    * @default undefined (uncontrolled), true (checked), false (unchecked), null (indeterminate)
@@ -25,7 +27,7 @@ export type Properties = {
    * 
    * @default 'primary'
    */
-  variant?: 'primary' | 'secondary' | 'error';
+  variant?: variant;
   
   /**
    *
