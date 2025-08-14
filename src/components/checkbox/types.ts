@@ -1,36 +1,3 @@
-import type { ReactNode } from "react";
-type variant = 'primary' | 'secondary' | 'error';
-export type Properties = {
-  /**
-   *
-   */
-  id?: string;
-  
-  /**
-   *
-   */
-  children?: ReactNode;
-
-  /**
-   *
-   * @default undefined (uncontrolled), true (checked), false (unchecked), null (indeterminate)
-   */
-  value?: boolean | null;
-  
-  /**
-   *
-   * @default false
-   */
-  disabled?: boolean;
-  
-  /**
-   * 
-   * @default 'primary'
-   */
-  variant?: variant;
-  
-  /**
-   *
-   */
-  onChange?: (event: React.SyntheticEvent, properties: Properties) => void;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:aefffc50c5e6af678397a072462dd05d1440334b1c9011bdb1bd9bcaa32bc063
+size 558

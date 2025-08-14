@@ -1,12 +1,3 @@
-import React from "react";
-
-const Switch = () => {
-  return (
-    <label className="switch">
-      <input type="checkbox" />
-      <span className="slider round"></span>
-    </label>
-  );
-};
-
-export default Switch;
+version https://git-lfs.github.com/spec/v1
+oid sha256:9fe258317f07d7a451021d58826cfb0b4197ae8398b2fb8d9af4a8215ded9de6
+size 215

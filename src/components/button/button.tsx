@@ -1,16 +1,3 @@
-import react from 'react';
-
-interface ButtonProps {
-  label: string;
-  onClick: () => void;
-}
-
-const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
-  return (
-    <button onClick={onClick}>
-      {label}
-    </button>
-  );
-};
-
-export default Button;
+version https://git-lfs.github.com/spec/v1
+oid sha256:0dfa6201a88619cf48598512cf76411bea5fb10af48eeb5e60867f115531f747
+size 260
