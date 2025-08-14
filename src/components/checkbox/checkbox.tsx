@@ -11,11 +11,12 @@ import { toDefaults, getContainerClass, getLabelClass } from './helpers';
 export default function Checkbox(properties?: Properties) {
 	const defaults = toDefaults(properties);
 
-	const inputReference = useRef<HTMLInputElement>(null);
+	const reference = useRef<HTMLInputElement>(null);
 
 	useLayoutEffect(() => {
-		if (inputReference.current) {
-			inputReference.current.indeterminate = defaults.value === null;
+		if (!reference.current) return;
+		if (reference.current) {
+			reference.current.indeterminate = defaults.value === null;
 		}
 	}, [defaults.value]);
 
@@ -26,8 +27,8 @@ export default function Checkbox(properties?: Properties) {
 	}, [defaults]);
 
 	const onContainerClickHandler = useCallback(() => {
-		if (inputReference.current && !defaults.disabled) {
-			inputReference.current.click();
+		if (reference.current && !defaults.disabled) {
+			reference.current.click();
 		}
 	}, [defaults.disabled]);
 
