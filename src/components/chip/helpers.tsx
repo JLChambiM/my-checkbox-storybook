@@ -10,14 +10,14 @@ import type { Properties } from './types';
  */
 export function toDefaults(properties?: Properties): Required<Properties> {
 	return _.defaults({}, properties, {
+		role: 'assist',
 		children: '',
-		variant: 'assist',
-		mode: 'flat',
+		color: 'default',
+		variant: 'filled',
 		icon: null,
 		avatar: null,
 		selected: false,
 		disabled: false,
-		elevated: false,
 		onClick: _.noop,
 		onRemove: _.noop,
 		onToggle: _.noop,
@@ -25,15 +25,16 @@ export function toDefaults(properties?: Properties): Required<Properties> {
 }
 
 export function toClasses(properties: Required<Properties>): string {
-	const { variant, mode, disabled, elevated, selected } = properties;
+	const { role, variant, color, disabled, selected, icon } = properties;
 	return clsx(
 		'chip',
-		`chip--${variant}`,
-		`chip--${mode}`,
+		role,
+		variant,
+		color,
 		{
-			'chip--selected': selected,
-			'chip--disabled': disabled,
-			'chip--elevated': elevated,
+			selected: selected,
+			disabled: disabled,
+			icon: icon,
 		}
 	);
 }

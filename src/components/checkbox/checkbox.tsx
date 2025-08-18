@@ -46,7 +46,7 @@ export default function Checkbox(properties?: Properties) {
 				role="presentation"
 			>
 				<input
-					ref={inputReference}
+					ref={reference}
 					type="checkbox"
 					className="input"
 					checked={defaults.value === true}
@@ -56,13 +56,13 @@ export default function Checkbox(properties?: Properties) {
 					aria-checked={defaults.value === null ? 'mixed' : defaults.value === true}
 				/>
 			</div>
-			{defaults.label && (
+			{defaults.children && (
 				<label 
 					className={getLabelClass(defaults.disabled)}
 					htmlFor={defaults.id}
 					onClick={onLabelClickHandler}
 				>
-					{defaults.label}
+					{defaults.children}
 				</label>
 			)}
 		</div>

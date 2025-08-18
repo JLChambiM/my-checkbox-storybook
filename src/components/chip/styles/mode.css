@@ -1,9 +1,0 @@
-   .chip--flat {
-    background-color: var(--chip-color-surface-variant);
-    color: var(--chip-color-on-surface-variant);
-  }
-   .chip--outlined {
-    background-color: transparent;
-    border-color: var(--chip-color-outline);
-    color: var(--chip-color-on-surface);
-  }

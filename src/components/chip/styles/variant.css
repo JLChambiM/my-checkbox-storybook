@@ -1,35 +1,10 @@
-/*
-  variant.css
-  -----------
-  Estilos específicos para cada variante de chip según Material Design 3
-  Define las diferencias funcionales entre assist, filter, input y suggestion
-*/
+   .filled {
+    background-color: var(--chip-bg);
+    color: #FFFFFF;
+  }
 
-/* ==========================================
-   ASSIST CHIP
-   ========================================== */
-   .chip--assist {
-    /* Hereda estilos base - no requiere modificaciones específicas */
-  }
-  
-  /* ==========================================
-     FILTER CHIP
-     ========================================== */
-  .chip--filter {
-    /* Hereda estilos base - el estado selected se maneja en state.css */
-  }
-  
-  /* ==========================================
-     INPUT CHIP
-     ========================================== */
-  .chip--input {
-    /* Reduce padding derecho para acomodar el botón de remove */
-    padding-right: calc(var(--chip-padding-horizontal) - 4px);
-  }
-  
-  /* ==========================================
-     SUGGESTION CHIP
-     ========================================== */
-  .chip--suggestion {
-    /* Hereda estilos base - no requiere modificaciones específicas */
+  .outlined {
+    background-color: transparent;
+    border-color: var(--chip-border);
+    color: var(--chip-text);
   }

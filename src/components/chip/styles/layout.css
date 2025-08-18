@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--chip-icon-size);
-    height: var(--chip-icon-size);
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
   }
   
@@ -17,13 +17,12 @@
     overflow: hidden;
     flex-shrink: 0;
   }
-  
-  .chip__label {
-    flex: 1;
-    min-width: 0;
+
+.chip__content {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex-grow: 1;
   }
   
   .chip__remove {

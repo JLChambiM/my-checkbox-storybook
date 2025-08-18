@@ -1,5 +1,6 @@
 import { useRef, useLayoutEffect } from 'react';
 import _ from 'lodash';
+
 import type { Properties } from "./types";
 import { toDefaults, toClasses } from "./helpers";
 import { Icon } from '../icon/index';
@@ -7,7 +8,7 @@ import "./styles/index.css";
 
 export default function Chip(properties?: Properties) {
 	const defaults = toDefaults(properties);
-	const reference = useRef<HTMLButtonElement>(null);
+	const reference = useRef<HTMLSpanElement>(null);
 	
 	useLayoutEffect(() => {
 		if (!reference.current) return;
@@ -16,14 +17,13 @@ export default function Chip(properties?: Properties) {
 	}, [defaults.disabled, defaults.selected]);
 	
 	return (
-		<button
+		<span
 			ref={reference}
 			className={toClasses(defaults)}
-			disabled={defaults.disabled}
-			type="button"
+			tabIndex={0}
 			onClick={(event) => {
 				if (defaults.disabled) return;
-				if (defaults.variant === 'filter' && defaults.onToggle !== _.noop) {
+				if (defaults.role === 'filter' && defaults.onToggle !== _.noop) {
 					defaults.onToggle(event, !defaults.selected, defaults);
 				} else {
 					defaults.onClick(event, defaults);
@@ -49,7 +49,7 @@ export default function Chip(properties?: Properties) {
 			</span>
 			
 			{/* Botón de eliminación para input chips */}
-			{defaults.variant === 'input' && defaults.onRemove !== _.noop && (
+			{defaults.role === 'input' && defaults.onRemove !== _.noop && (
 				<button
 					className="chip__remove"
 					type="button"
@@ -62,13 +62,10 @@ export default function Chip(properties?: Properties) {
 					aria-label="Remove"
 				>
 					<Icon 
-						name="close" 
-						size="small" 
-						variant="outlined"
-						color="red"
+						name="close"
 					/>
 				</button>
 			)}
-		</button>
+		</span>
 	);
 }
