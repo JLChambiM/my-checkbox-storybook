@@ -61,9 +61,7 @@ export default function Chip(properties?: Properties) {
 					disabled={defaults.disabled}
 					aria-label="Remove"
 				>
-					<Icon 
-						name="close"
-					/>
+					<Icon name="X"/>
 				</button>
 			)}
 		</span>

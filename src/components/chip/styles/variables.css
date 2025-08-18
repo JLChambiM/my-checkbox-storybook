@@ -1,22 +1,23 @@
 :root {
-  --chip-color-default:#000000;
+  /* Colores base del sistema - los que ya tienes */
+  --chip-color-default: #000000;
   --chip-color-primary: #6750A4;
   --chip-color-secondary: #1976d2;
   --chip-color-error: #d32f2f;
   --chip-color-success: #2e7d32;
   --chip-color-warning: #ed6c02;
 
-
+  /* Tipografía */
   --chip-font-family: 'Roboto', system-ui, sans-serif;
   --chip-font-size: 0.875rem; /* 14px */
   --chip-line-height: 1.25rem; /* 20px */
   --chip-letter-spacing: 0.00625rem; /* 0.1px */
   --chip-font-weight: 500;
   
+  /* Dimensiones */
   --chip-height: 32px;
   --chip-border-radius: 8px;
-  --chip-border-width: 0.5px;
-
+  --chip-border-width: 1px;
   --chip-padding-horizontal: 16px;
   --chip-padding-vertical: 6px;
   --chip-gap: 8px;
@@ -24,47 +25,17 @@
   --chip-avatar-size: 24px;
   --chip-remove-size: 18px;
 
+  /* Transiciones */
   --chip-transition-duration: 0.2s;
   --chip-transition-easing: cubic-bezier(0.2, 0.0, 0, 1.0);
 
-  /* --chip-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15);
-  --chip-elevation-2: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.15); */
+  /* Elevaciones - ahora están definidas */
+  --chip-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15);
+  --chip-elevation-2: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.15);
+
+  /* Colores neutros para estados - solo los necesarios */
+  --chip-surface: #fafafa;
+  --chip-surface-variant: #e0e0e0;
+  --chip-on-surface: #1d1b20;
+  --chip-on-surface-variant: #49454f;
 }
-
-.default {
-  --chip-bg: #e0e0e0;
-  --chip-text: var(--chip-color-default);
-  --chip-border: var(--chip-color-default);
-}
-
-.primary {
-  --chip-bg: var(--chip-color-primary);
-  --chip-text: var(--chip-color-primary)
-  --chip-border: var(--chip-color-primary);
-}
-
-.secondary {
-  --chip-bg: var(--chip-color-secondary);
-  --chip-text: var(--chip-color-secondary);
-  --chip-border: var(--chip-color-secondary);
-}
-
-.error {
-  --chip-bg: var(--chip-color-error);
-  --chip-text: var(--chip-color-error);
-  --chip-border: var(--chip-color-error);
-}
-
-.success {
-  --chip-bg: var(--chip-color-success);
-  --chip-text: var(--chip-color-success);
-  --chip-border: var(--chip-color-success);
-}
-
-.warning {
-  --chip-bg: var(--chip-color-warning);
-  --chip-text: var(--chip-color-warning);
-  --chip-border: var(--chip-color-warning);
-}
-
-
