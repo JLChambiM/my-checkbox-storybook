@@ -49,7 +49,7 @@ export const AssistWithIcon: Story = {
 		children: 'Assist with Icon',
 		variant: 'assist',
 		mode: 'flat',
-		icon: <Icon name="1k" color='red'/>,
+		icon: <Icon name="1k" color='red' size='smallest'/>,
 	},
 	parameters: {
 		docs: {

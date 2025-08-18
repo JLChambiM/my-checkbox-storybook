@@ -65,7 +65,7 @@ export default function Chip(properties?: Properties) {
 						name="close" 
 						size="small" 
 						variant="outlined"
-						color="black"
+						color="red"
 					/>
 				</button>
 			)}

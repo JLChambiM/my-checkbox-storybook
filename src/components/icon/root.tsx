@@ -20,7 +20,8 @@ import './styles/index.css';
 export default function Icon(properties?: Properties) {
 	const defaults = toDefaults(properties);
 	const iconKey = `${defaults.name}__${defaults.variant}_${toFill(defaults)}_${defaults.weight}`;
-	const reference = (defaults.ref ?? useRef<HTMLElement>(null)) as RefObject<HTMLElement | null>;
+	const internalRef = useRef<HTMLElement>(null);
+	const reference = (defaults.ref ?? internalRef) as RefObject<HTMLElement | null>;
 	const svg = useMemo(() => {
 		const dictionary = icons as Record<string, string>;
 		const size = toSize(defaults);
@@ -31,7 +32,7 @@ export default function Icon(properties?: Properties) {
 			height: size,
 			width: size,
 		}
-	}, [iconKey, defaults.color]);
+	}, [iconKey, defaults]);
 
 	useLayoutEffect(() => {
 		if (!reference.current) return;
@@ -39,7 +40,7 @@ export default function Icon(properties?: Properties) {
 		if (!_.isUndefined(defaults.rotated)) { reference.current.style.setProperty('--icon-rotate-inject', toRotate(defaults)); }
 
 		reference.current.style.setProperty('--icon-color-inject', defaults.color);
-	}, [reference.current]);
+	}, [defaults, reference]);
 
 	return (
 		<i ref={reference}

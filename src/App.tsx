@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Chip from './components/chip';
 
@@ -22,7 +21,7 @@ const Avatar = () => (
 );
 
 // Componente Icono simple (SVG)
-const Icon = () => (
+const SimpleIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="10" cy="10" r="8" stroke="#6750A4" strokeWidth="2" fill="none" />
     <path d="M10 6V10L13 12" stroke="#6750A4" strokeWidth="2" strokeLinecap="round" />
@@ -53,7 +52,7 @@ function App() {
       <h2>Assist Chip</h2>
       <div style={chipRow}>
         <Chip>Assist simple</Chip>
-        <Chip icon={<Icon />} children="assist"></Chip>
+        <Chip icon={<SimpleIcon />} children="assist"></Chip>
       </div>
 
       <h2 style={{ marginTop: 32 }}>Filter Chip</h2>
@@ -69,7 +68,7 @@ function App() {
           variant="filter"
           selected={selectedFilter[1]}
           onToggle={(event, selected) => setSelectedFilter([selectedFilter[0], selected])}
-          icon={<Icon />}
+          icon={<SimpleIcon />}
         >
           Filtro 2 con icono
         </Chip>
@@ -92,13 +91,13 @@ function App() {
       <h2 style={{ marginTop: 32 }}>Suggestion Chip</h2>
       <div style={chipRow}>
         <Chip variant="suggestion">Sugerencia simple</Chip>
-        <Chip variant="suggestion" icon={<Icon />}>Sugerencia con icono</Chip>
+        <Chip variant="suggestion" icon={<SimpleIcon />}>Sugerencia con icono</Chip>
       </div>
 
       <h2 style={{ marginTop: 32 }}>Chips deshabilitados</h2>
       <div style={chipRow}>
         <Chip disabled>Assist deshabilitado</Chip>
-        <Chip variant="filter" disabled icon={<Icon />}>Filtro deshabilitado</Chip>
+        <Chip variant="filter" disabled icon={<SimpleIcon />}>Filtro deshabilitado</Chip>
         <Chip variant="input" disabled avatar={<Avatar />}>Input deshabilitado</Chip>
         <Chip variant="suggestion" disabled>Sugerencia deshabilitada</Chip>
       </div>
@@ -106,7 +105,7 @@ function App() {
       <h2 style={{ marginTop: 32 }}>Chips elevados</h2>
       <div style={chipRow}>
         <Chip elevated>Assist elevado</Chip>
-        <Chip variant="filter" elevated selected={true} icon={<Icon />}>Filtro elevado</Chip>
+        <Chip variant="filter" elevated selected={true} icon={<SimpleIcon />}>Filtro elevado</Chip>
         <Chip variant="input" elevated avatar={<Avatar />}>Input elevado</Chip>
         <Chip variant="suggestion" elevated>Sugerencia elevada</Chip>
       </div>
