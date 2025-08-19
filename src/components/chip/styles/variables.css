@@ -1,5 +1,4 @@
 :root {
-  /* Colores base del sistema - los que ya tienes */
   --chip-color-default: #000000;
   --chip-color-primary: #6750A4;
   --chip-color-secondary: #1976d2;
@@ -7,16 +6,19 @@
   --chip-color-success: #2e7d32;
   --chip-color-warning: #ed6c02;
 
+  --chip-surface-variant: #e0e0e0;
+  --chip-on-surface-variant: #49454f;
+
   /* Tipografía */
   --chip-font-family: 'Roboto', system-ui, sans-serif;
   --chip-font-size: 0.875rem; /* 14px */
   --chip-line-height: 1.25rem; /* 20px */
   --chip-letter-spacing: 0.00625rem; /* 0.1px */
-  --chip-font-weight: 500;
+  --chip-font-weight: 400;
   
   /* Dimensiones */
   --chip-height: 32px;
-  --chip-border-radius: 8px;
+  --chip-border-radius: 15px;
   --chip-border-width: 1px;
   --chip-padding-horizontal: 16px;
   --chip-padding-vertical: 6px;
@@ -27,15 +29,10 @@
 
   /* Transiciones */
   --chip-transition-duration: 0.2s;
-  --chip-transition-easing: cubic-bezier(0.2, 0.0, 0, 1.0);
 
   /* Elevaciones - ahora están definidas */
   --chip-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15);
   --chip-elevation-2: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.15);
 
-  /* Colores neutros para estados - solo los necesarios */
-  --chip-surface: #fafafa;
-  --chip-surface-variant: #e0e0e0;
-  --chip-on-surface: #1d1b20;
-  --chip-on-surface-variant: #49454f;
+
 }

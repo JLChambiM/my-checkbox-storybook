@@ -76,14 +76,3 @@
   border-color: var(--chip-color-warning);
   color: var(--chip-color-warning);
 }
-
-/* ===========================================
-   VARIANTE ELEVATED (opcional)
-   =========================================== */
-
-.chip.elevated {
-  background-color: var(--chip-surface);
-  color: var(--chip-on-surface);
-  border: var(--chip-border-width) solid transparent;
-  box-shadow: var(--chip-elevation-1);
-}

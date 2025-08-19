@@ -8,11 +8,11 @@ function App() {
   return (
     <div className="App" style={{ padding: 32, textAlign: 'center' }}>
       <Chip 
-      icon={<Icon name="⭐" />}
-      variant='outlined'
-			color='primary' 
+      // icon={<Icon name="⭐" />}
+      variant='filled'
+			color='secondary' 
       >
-        Assist simple</Chip>
+        primary</Chip>
       <Chip
         icon={<Icon name="⭐" />}
         variant='outlined'
@@ -26,9 +26,9 @@ function App() {
         variant='filled'
         color='success'
       >
-        Assist chipppppppppppppppppppppppppppppppppppppppppppppppp</Chip>
+        Assist chip</Chip>
       <Chip
-        variant='outlined'
+        variant='filled'
         color='default'
         role='input'
         onRemove={() => console.log('hola')}

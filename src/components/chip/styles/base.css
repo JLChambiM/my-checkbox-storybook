@@ -2,19 +2,22 @@
   display: inline-flex;
   align-items: center;
   box-sizing: border-box;
-  height: 32px;
-  padding: 0 16px;
-  gap: 8px;
+  
+  height: var(--chip-height);
+  padding: var(--chip-padding-vertical) var(--chip-padding-horizontal);
+  gap: var(--chip-gap);
+
   border-radius: var(--chip-border-radius);
   border: var(--chip-border-width) solid transparent;
+  
   font-family: var(--chip-font-family);
   font-size: var(--chip-font-size);
   font-weight: var(--chip-font-weight);
   line-height: var(--chip-line-height);
   letter-spacing: var(--chip-letter-spacing);
+  
   cursor: pointer;
   user-select: none;
-  transition: background-color var(--chip-transition-duration) var(--chip-transition-easing),
-              border-color var(--chip-transition-duration) var(--chip-transition-easing),
-              color var(--chip-transition-duration) var(--chip-transition-easing);
+  
+  transition: box-shadow var(--chip-transition-duration) ease;
 }
