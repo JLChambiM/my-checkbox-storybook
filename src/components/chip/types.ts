@@ -8,7 +8,7 @@ type Role = 'assist' | 'filter' | 'input' | 'suggestion';
 type Variant = 'filled' | 'outlined';
 type Color = 'default' | 'primary' | 'secondary' | 'error' | 'success' | 'warning'
 
-export type Properties = RefAttributes<HTMLSpanElement> &  {
+export type Properties = RefAttributes<HTMLElement> &  {
   /** Tipo de chip (por defecto: 'assist') */
   role?: Role;
   /** Contenido principal del chip */
@@ -21,6 +21,10 @@ export type Properties = RefAttributes<HTMLSpanElement> &  {
   icon?: ReactNode; // Changed from Icon to icon
   /** Avatar al inicio (solo para input chips, no usar junto con startIcon) */
   avatar?: ReactNode;
+  /** URL para convertir el chip en link */
+  href?: string;
+  /** Target del link (ej: '_blank', '_self') */
+  target?: '_blank' | '_self' | '_parent' | '_top';
   /** Indica si el chip está seleccionado (solo filter/input) */
   selected?: boolean;
   /** Deshabilita el chip */

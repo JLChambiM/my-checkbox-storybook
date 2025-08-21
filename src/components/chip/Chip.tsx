@@ -8,7 +8,8 @@ import "./styles/index.css";
 
 export default function Chip(properties?: Properties) {
 	const defaults = toDefaults(properties);
-	const reference = useRef<HTMLSpanElement>(null);
+	const reference = useRef<HTMLElement>(null);
+	const Element = defaults.href ? 'a' : 'span';
 	
 	useLayoutEffect(() => {
 		if (!reference.current) return;
@@ -17,9 +18,11 @@ export default function Chip(properties?: Properties) {
 	}, [defaults.disabled, defaults.selected]);
 	
 	return (
-		<span
-			ref={reference}
+		<Element
+			ref={reference as any}
 			className={toClasses(defaults)}
+			href={defaults.href}
+			target={defaults.target}
 			tabIndex={0}
 			onClick={(event) => {
 				if (defaults.disabled) return;
@@ -64,6 +67,6 @@ export default function Chip(properties?: Properties) {
 					<Icon name="X"/>
 				</button>
 			)}
-		</span>
+		</Element>
 	);
 }

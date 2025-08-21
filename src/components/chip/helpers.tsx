@@ -16,6 +16,8 @@ export function toDefaults(properties?: Properties): Required<Properties> {
 		variant: 'filled',
 		icon: null,
 		avatar: null,
+		href: null,
+		target: null,
 		selected: false,
 		disabled: false,
 		onClick: _.noop,

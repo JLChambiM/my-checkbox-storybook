@@ -36,11 +36,25 @@ function App() {
         A</Chip>
       <Chip
         icon={<Icon name="⭐" />}
-        variant='filled'
-        color='secondary'
+        variant='outlined'
+        color='default'
       >
         Assist chip</Chip>
-      
+
+      <Chip 
+        href="https://www.google.com/?hl=es"
+        target="_blank"
+        color='success'
+        variant='outlined'
+        >Google</Chip>
+      <Chip href="https://www.facebook.com/"
+        target="_self" 
+        color='error'
+      >Facebook</Chip>
+      <Chip href="https://www.microsoft.com/es-co/microsoft-teams/"
+        target="_parent"
+        color='warning'
+      >Microsoft Teams</Chip>
     </div>
   );
 }

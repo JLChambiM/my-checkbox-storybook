@@ -2,7 +2,8 @@
   display: inline-flex;
   align-items: center;
   box-sizing: border-box;
-  
+  text-decoration: none;
+
   height: var(--chip-height);
   padding: var(--chip-padding-vertical) var(--chip-padding-horizontal);
   gap: var(--chip-gap);

@@ -1,5 +1,3 @@
-/* Estados simplificados y más visibles */
-
 /* Hover: pequeña elevación y realce de brillo */
 .chip:hover:not(.disabled) {
   box-shadow: var(--chip-elevation-2);
