@@ -8,7 +8,7 @@
   padding: var(--chip-padding-vertical) var(--chip-padding-horizontal);
   gap: var(--chip-gap);
 
-  border-radius: var(--chip-border-radius);
+  border-radius: var(--chip-border-radius-inject, var(--chip-border-radius));
   border: var(--chip-border-width) solid transparent;
   
   font-family: var(--chip-font-family);

@@ -7,6 +7,7 @@ type SuggestionExcludedProperties  = 'selected' | 'onToggle' | 'onRemove' | 'ava
 type Role = 'assist' | 'filter' | 'input' | 'suggestion';
 type Variant = 'filled' | 'outlined';
 type Color = 'default' | 'primary' | 'secondary' | 'error' | 'success' | 'warning'
+type Radius = 'square' | 'rounded' | number | string;
 
 export type Properties = RefAttributes<HTMLElement> &  {
   /** Tipo de chip (por defecto: 'assist') */
@@ -17,6 +18,8 @@ export type Properties = RefAttributes<HTMLElement> &  {
   color?: Color;
   /** Estilo visual (por defecto: 'filled') */
   variant?: Variant;
+  /** Radio del chip (por defecto: 'rounded') */
+  radius?: Radius;
   /** Icono al inicio (no usar junto con avatar) */
   icon?: ReactNode; // Changed from Icon to icon
   /** Avatar al inicio (solo para input chips, no usar junto con startIcon) */

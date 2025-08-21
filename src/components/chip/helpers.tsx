@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import clsx from 'clsx';
+import { P, match } from 'ts-pattern';
 
 import type { Properties } from './types';
 
@@ -14,6 +15,7 @@ export function toDefaults(properties?: Properties): Required<Properties> {
 		children: '',
 		color: 'default',
 		variant: 'filled',
+		radius: 'rounded',
 		icon: null,
 		avatar: null,
 		href: null,
@@ -39,4 +41,13 @@ export function toClasses(properties: Required<Properties>): string {
 			icon: icon,
 		}
 	);
+}
+
+export function toRadius (properties: Required<Properties>): number | string {
+  return match(properties.radius)
+  	.with('rounded', () => '15px')
+	.with('square', () => '0px')
+	.with(P.number, (value) => `${value}px`)
+	.with(P.string, (value) => value)
+	.otherwise(() => properties.radius as number);
 }

@@ -1,8 +1,8 @@
-import { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect,useMemo } from 'react';
 import _ from 'lodash';
 
 import type { Properties } from "./types";
-import { toDefaults, toClasses } from "./helpers";
+import { toDefaults, toClasses,toRadius } from "./helpers";
 import { Icon } from '../icon/index';
 import "./styles/index.css";
 
@@ -10,6 +10,10 @@ export default function Chip(properties?: Properties) {
 	const defaults = toDefaults(properties);
 	const reference = useRef<HTMLElement>(null);
 	const Element = defaults.href ? 'a' : 'span';
+	const radius = useMemo(
+	() => toRadius(defaults),
+	[defaults]
+  );
 	
 	useLayoutEffect(() => {
 		if (!reference.current) return;
@@ -21,6 +25,7 @@ export default function Chip(properties?: Properties) {
 		<Element
 			ref={reference as any}
 			className={toClasses(defaults)}
+			style={radius ? { '--chip-border-radius-inject': radius } as React.CSSProperties : undefined}
 			href={defaults.href}
 			target={defaults.target}
 			tabIndex={0}
