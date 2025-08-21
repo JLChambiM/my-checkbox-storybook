@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Chip from './components/chip'
 import { Icon } from './components/icon';
